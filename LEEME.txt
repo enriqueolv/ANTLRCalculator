@@ -1,0 +1,18 @@
+Es necesario especificar el path donde se localiza ANTLR
+así como darle un alias para mayor comodidad:
+
+export CLASSPATH=".:/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH"
+alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
+
+
+Instrucciones de compilación:
+
+cd calculator
+
+antlr4 -no-listener -visitor CalculatorGrammar.g4
+
+javac Calculator*.java 
+
+java Calculator
